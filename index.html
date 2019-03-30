@@ -12,49 +12,73 @@
 </head>
 
 <body>
-  <div class="jumbotron"> 
-   <h1>Employee Data Management</h1> 
-   <h3> A Comprehensive Directory of Employee Billable Hours</h3>
-  </div>
-
   <div class="container">
-   
-      <div class="card-header" id="EmployeesNow">
-        Current Employees
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Employee name</li>
-        <li class="list-group-item">Albus Dumbledore</li>
-        <li class="list-group-item">Severus Snape</li>
-        <li class="list-group-item">Harry Potter</li>
-      </ul>
-  </div>
+    <div class="jumbotron bg-dark">
+        <h1>Employee Data Management</h1>
+        <h2>A Comprehensive Directory of Employee Billable Hours</h2>
+    </div>
 
-  <div class="container" id="AddEmployee">
-    <form role="form">
-        <div class="form-group row">
-          <label for="name-input">Employee Name:</label>
-          <input class="form-control" id="name-input" type="text">
-          <div id="name"></div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <td>Current Employees</td>
+            <tr>
+
+            <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Months Worked</th>
+                <th scope="col">Monthly Rate ($)</th>
+                <th scope="col">Total Billed ($)</th>
+
+            </tr>
+            <tbody id="employees">
+
+            </tbody>
+          </thead>
+        
+          
+
+    </table>
+    <hr>
+
+    <table class="table">
+
+        Add Employees
+        <hr>
+
+        Employee Name
+        <div class="form-row">
+            <input type="text" id="name-input" class="form-control" placeholder="Jane Doe" aria-label="Name" aria-describedby="basic-addon1">
         </div>
-        <div class="form-group row">
-          <label for="role-input">Role:</label>
-          <input class="form-control" id="email-input" type="email">
-          <div id="role"></div>
+
+        <div class="form-row">
+
+            Role
+            <input type="text" id="role-input" class="form-control" placeholder="CEO" aria-label="Role" aria-describedby="basic-addon1">
+
         </div>
-        <div class="form-group row">
-          <label for="start-input">Start Date:</label>
-          <input class="form-control" id="startDate" type="date">
-          <div id="date"></div>
+
+        <div class="form-row">
+
+            Start Date (MM/DD/YYYY)
+            <input type="text" id="date-input" class="form-control" placeholder="01/01/1980" aria-label="Start Date" aria-describedby="basic-addon1">
+
         </div>
-        <div class="form-group row">
-          <label for="monthly-input">Monthly Rate:</label>
-          <textarea class="form-control" rows="5" id="comment-input"></textarea>
-          <div id="monthly"></div>
+
+        <div class="form-row">
+
+            Monthly Rate
+            <input type="text" id="rate-input" class="form-control" placeholder="20000" aria-label="Monthly Rate" aria-describedby="basic-addon1">
+
         </div>
-        <button class="btn btn-default" id="add-user" type="submit">Submit</button>
-    </form>
-  </div>
+        <hr>
+
+        <button class="btn btn-primary" id="addemployee">Add Employee</button>
+
+    </table>
+</div>
 
   <script src="assets/script.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
