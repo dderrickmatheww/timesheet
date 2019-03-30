@@ -3,7 +3,7 @@
 var name = "";
 var role = "";
 var date = "";
-var rate = "";
+var rate = 0;
 
 var config = {
   apiKey: "AIzaSyArsOzYgCmZm6VGmQPfRnKJSZgciww10C0",
@@ -18,50 +18,66 @@ firebase.initializeApp(config);
 
 var database = firebase.database()
 
+<<<<<<< HEAD
 $("#addemployee").on("click", function(){
     name = $("#name-input").val().trim()
     role = $("#role-input").val().trim()
     date = moment().format("MMM Do YY"); 
     rate = $("#rate-input").val().trim()
-
-    console.log(name, role, date, rate)
-
-    var t = $("<tr>")
-    var nt = $("<td>")
-    var rt = $("<td>")
-    var dt = $("<td>")
-    var rat = $("<td>")
-
-    var mont = $("<td>")
-    var tott = $("<td>")
-
-    nt.text(name)
-    rt.text(role)
-    dt.text(date)
-    rat.text(rate)
-
-    mont.text()
-    //do the math here to get the months between the date var and the current date
-
-    tott.text()
-    //do the math here to get the total billing by multiplying mont by rate
+=======
+>>>>>>> d4271399db97c2c238fb00999fc6c29987941fb8
 
 
-    t.append(nt)
-    t.append(rt)
-    t.append(dt)
-    t.append(mont)
-    t.append(rat)
-    t.append(tott)
+function renderEmployees(){
+  name = $("#name-input").val().trim()
+  role = $("#role-input").val().trim()
+  date = $("#date-input").val().trim()
+  rate = parseInt($("#rate-input").val().trim())
 
-    $("#employees").append(t)
+  console.log(name, role, date, rate)
+
+  var t = $("<tr>")
+  var nt = $("<td>")
+  var rt = $("<td>")
+  var dt = $("<td>")
+  var rat = $("<td>")
+
+  var mont = $("<td>")
+  var tott = $("<td>")
+
+  nt.text(name)
+  rt.text(role)
+  dt.text(date)
+  rat.text(rate)
+
+  mont.text()
+  //do the math here to get the months between the date var and the current date
+
+  tott.text()
+  //do the math here to get the total billing by multiplying mont by rate
+
+
+  t.append(nt)
+  t.append(rt)
+  t.append(dt)
+  t.append(mont)
+  t.append(rat)
+  t.append(tott)
+
+  $("#employees").append(t)
+}
+
+
+$("#addemployee").on("click", function(){
+   
+  renderEmployees();
 
     $(".form-control").val("")
     
     database.ref().push({
       name: name,
       role: role,
-      date: date,
+      date: firebase.database.ServerValue.TIMESTAMP,
       rate: rate,
     });
 })
