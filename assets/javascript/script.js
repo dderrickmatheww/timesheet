@@ -21,7 +21,7 @@ var database = firebase.database()
 $("#addemployee").on("click", function(){
     name = $("#name-input").val().trim()
     role = $("#role-input").val().trim()
-    date = $("#date-input").val().trim()
+    date = moment().format("MMM Do YY"); 
     rate = $("#rate-input").val().trim()
 
     console.log(name, role, date, rate)
