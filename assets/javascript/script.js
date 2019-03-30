@@ -18,20 +18,12 @@ firebase.initializeApp(config);
 
 var database = firebase.database()
 
-<<<<<<< HEAD
-$("#addemployee").on("click", function(){
-    name = $("#name-input").val().trim()
-    role = $("#role-input").val().trim()
-    date = moment().format("MMM Do YY"); 
-    rate = $("#rate-input").val().trim()
-=======
->>>>>>> d4271399db97c2c238fb00999fc6c29987941fb8
 
 
 function renderEmployees(){
   name = $("#name-input").val().trim()
   role = $("#role-input").val().trim()
-  date = $("#date-input").val().trim()
+  date = moment().format("MMM Do YY"); 
   rate = parseInt($("#rate-input").val().trim())
 
   console.log(name, role, date, rate)
