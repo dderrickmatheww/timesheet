@@ -30,14 +30,28 @@ $("#addemployee").on("click", function(){
     rat.text(rate)
 
     mont.text()
+    //do the math here to get the months between the date var and the current date
+
+    tott.text()
+    //do the math here to get the total billing by multiplying mont by rate
+
 
     t.append(nt)
     t.append(rt)
     t.append(dt)
     t.append(rat)
+    t.append(mont)
+    t.append(tott)
 
     $("#employees").append(t)
 
     $(".form-control").val("")
 
 })
+
+database.ref().push({
+    name: name,
+    role: role,
+    date: firebase.database.ServerValue.TIMESTAMP,
+    rate: rate
+  });
