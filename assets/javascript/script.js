@@ -20,44 +20,49 @@ var database = firebase.database()
 
 
 
+function renderEmployees(){
+  name = $("#name-input").val().trim()
+  role = $("#role-input").val().trim()
+  date = $("#date-input").val().trim()
+  rate = parseInt($("#rate-input").val().trim())
+
+  console.log(name, role, date, rate)
+
+  var t = $("<tr>")
+  var nt = $("<td>")
+  var rt = $("<td>")
+  var dt = $("<td>")
+  var rat = $("<td>")
+
+  var mont = $("<td>")
+  var tott = $("<td>")
+
+  nt.text(name)
+  rt.text(role)
+  dt.text(date)
+  rat.text(rate)
+
+  mont.text()
+  //do the math here to get the months between the date var and the current date
+
+  tott.text()
+  //do the math here to get the total billing by multiplying mont by rate
+
+
+  t.append(nt)
+  t.append(rt)
+  t.append(dt)
+  t.append(mont)
+  t.append(rat)
+  t.append(tott)
+
+  $("#employees").append(t)
+}
+
 
 $("#addemployee").on("click", function(){
-    name = $("#name-input").val().trim()
-    role = $("#role-input").val().trim()
-    date = $("#date-input").val().trim()
-    rate = parseInt($("#rate-input").val().trim())
-
-    console.log(name, role, date, rate)
-
-    var t = $("<tr>")
-    var nt = $("<td>")
-    var rt = $("<td>")
-    var dt = $("<td>")
-    var rat = $("<td>")
-
-    var mont = $("<td>")
-    var tott = $("<td>")
-
-    nt.text(name)
-    rt.text(role)
-    dt.text(date)
-    rat.text(rate)
-
-    mont.text()
-    //do the math here to get the months between the date var and the current date
-
-    tott.text()
-    //do the math here to get the total billing by multiplying mont by rate
-
-
-    t.append(nt)
-    t.append(rt)
-    t.append(dt)
-    t.append(mont)
-    t.append(rat)
-    t.append(tott)
-
-    $("#employees").append(t)
+   
+  renderEmployees();
 
     $(".form-control").val("")
     
