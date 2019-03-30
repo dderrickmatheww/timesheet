@@ -3,7 +3,7 @@
 var name = "";
 var role = "";
 var date = "";
-var rate = "";
+var rate = 0;
 
 var config = {
   apiKey: "AIzaSyArsOzYgCmZm6VGmQPfRnKJSZgciww10C0",
@@ -18,11 +18,14 @@ firebase.initializeApp(config);
 
 var database = firebase.database()
 
+
+
+
 $("#addemployee").on("click", function(){
     name = $("#name-input").val().trim()
     role = $("#role-input").val().trim()
     date = $("#date-input").val().trim()
-    rate = $("#rate-input").val().trim()
+    rate = parseInt($("#rate-input").val().trim())
 
     console.log(name, role, date, rate)
 
@@ -61,7 +64,7 @@ $("#addemployee").on("click", function(){
     database.ref().push({
       name: name,
       role: role,
-      date: date,
+      date: firebase.database.ServerValue.TIMESTAMP,
       rate: rate,
     });
 })
