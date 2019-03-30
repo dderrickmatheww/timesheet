@@ -2,4 +2,19 @@
   text-align: center;
   background-color: black;
   color: white;  
+  border-radius: 0;
+  border-bottom: darkgoldenrod solid 4px;
 } 
+
+.table {
+  margin-bottom: 0;
+}
+
+#row1 {
+  margin-bottom: 25px;
+}
+
+#addemployee {
+  float: right;
+}
+
