@@ -1,42 +1,43 @@
-
-
-
-
-
-
-
-
-name = $("#name-input").val().trim();
-age = $("#age-input").val().trim();
-email = $("#email-input").val().trim();
-comment = $("#comment-input").val().trim();
-
-
-
-
-
+// Initialize Firebase
 var config = {
-    apiKey: "AIzaSyBqtgcatkRo935JTDFgyezWT20kkVsDNyE",
-    authDomain: "test-project-9bcc3.firebaseapp.com",
-    databaseURL: "https://test-project-9bcc3.firebaseio.com",
-    projectId: "test-project-9bcc3",
-    storageBucket: "test-project-9bcc3.appspot.com",
-    messagingSenderId: "632747193806"
-};
-firebase.initializeApp(config);
+    apiKey: "AIzaSyArsOzYgCmZm6VGmQPfRnKJSZgciww10C0",
+    authDomain: "titlesheet-27591.firebaseapp.com",
+    databaseURL: "https://titlesheet-27591.firebaseio.com",
+    projectId: "titlesheet-27591",
+    storageBucket: "titlesheet-27591.appspot.com",
+    messagingSenderId: "609136145728"
+  };
+  firebase.initializeApp(config);
 
-var database = firebase.database();
+$("#addemployee").on("click", function(){
+    var name = $("#name-input").val().trim()
+    var role = $("#role-input").val().trim()
+    var date = $("#date-input").val().trim()
+    var rate = $("#rate-input").val().trim()
 
-$("#add-user").on("click", function(event) {
-    // Don't refresh the page!
-    event.preventDefault();
+    var t = $("<tr>")
+    var nt = $("<td>")
+    var rt = $("<td>")
+    var dt = $("<td>")
+    var rat = $("<td>")
 
-    // Code in the logic for storing and retrieving the most recent user.
-    name = $("#name-input").val().trim();
-    age = $("#age-input").val().trim();
-    email = $("#email-input").val().trim();
-    comment = $("#comment-input").val().trim();
+    var mont = $("<td>")
+    var tott = $("<td>")
 
-    var row = $("<div>")
-    
+    nt.text(name)
+    rt.text(role)
+    dt.text(date)
+    rat.text(rate)
+
+    mont.text()
+
+    t.append(nt)
+    t.append(rt)
+    t.append(dt)
+    t.append(rat)
+
+    $("#employees").append(t)
+
+    $(".form-control").val("")
+
 })
