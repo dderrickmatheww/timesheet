@@ -57,12 +57,12 @@ $("#addemployee").on("click", function(){
     $("#employees").append(t)
 
     $(".form-control").val("")
-
+    
+    database.ref().push({
+      name: name,
+      role: role,
+      date: date,
+      rate: rate,
+    });
 })
 
-database.ref().push({
-  name: name,
-  role: role,
-  date: date,
-  rate: rate,
-});
